@@ -30,7 +30,7 @@ def transformation():
                 transformed_json[i]["sales"] = item["sales_by_country"][country_sales][year_sales]
                 i += 1
     pure_json = json_normalize(transformed_json)
-    pure_json.to_csv("sales.csv", index=False, sep="\t")
+    pure_json.to_csv("sales.csv", index=False, sep="\n")
 
 transformation()
 
@@ -190,5 +190,7 @@ ax.plot(range(2, 10), array, 1)
 
 fig.show()
 plt.show()
+
+
 
 
