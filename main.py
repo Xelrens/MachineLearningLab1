@@ -24,13 +24,13 @@ def transformation():
         for country_sales in item["sales_by_country"]:
             for year_sales in item["sales_by_country"][country_sales]:
                 transformed_json.append(dict())
-                transformed_json[i]["item,"] = item_name + ","
-                transformed_json[i]["country,"] = country_sales + ","
-                transformed_json[i]["year,"] = year_sales + ","
+                transformed_json[i]["item"] = item_name
+                transformed_json[i]["country"] = country_sales
+                transformed_json[i]["year"] = year_sales
                 transformed_json[i]["sales"] = item["sales_by_country"][country_sales][year_sales]
                 i += 1
     pure_json = json_normalize(transformed_json)
-    pure_json.to_csv("sales.csv", index=False, sep="\n")
+    pure_json.to_csv("sales.csv", index=False, sep=",")
 
 transformation()
 
